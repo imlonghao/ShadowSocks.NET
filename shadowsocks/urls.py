@@ -15,4 +15,5 @@ urlpatterns = patterns('shadowsocks.web.views',
     url(r'^link$', 'link'),
     url(r'^code$', 'code'),
     url(r'^api$', 'api'),
+    url(r'^email/(.+)$', 'email'),
 )
