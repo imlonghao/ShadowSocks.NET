@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="imlonghao">
+
+    <title>链接 | ShadowSocks公益组织 | ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号</title>
+    <meta name="description" content="ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号" />
+    <meta name="keywords" content="ShadowSocks,ShadowSocks公益,ShadowSocks公益组织,ShadowSocks帐号,ShadowSocks教程" />
+
+    <link href="static/bootstrap.css" rel="stylesheet">
+    <link href="static/jumbotron-narrow.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+      <script src="static/html5shiv.min.js"></script>
+      <script src="static/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/">首页</a></li>
+          <li><a href="get">获取</a></li>
+          <li><a href="share">分享</a></li>
+          <li class="active"><a href="link">链接</a></li>
+          <li><a href="https://blog.shadowsocks.net/">博客</a></li>
+        </ul>
+        <h3 class="text-muted">ShadowSocks公益组织</h3>
+      </div>
+
+	<div class="link">
+		<h3>仅以友情链接的形式，感谢那些曾经帮助过我们的人！</h3>
+        <blockquote>
+        <p>若您认为您也对我们曾经做出过帮助，请发邮件与我们联系！</p>
+        <p><a href="mailto:admin@shadowsocks.net">admin@shadowsocks.net</a>
+        </blockquote>
+        <ul>
+        <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=imlonghao@gmail.com&cy_code=USD&amount=5&item_name=ShadowSocks.NET&undefined_quantity=1" target="_blank"><strong>通过 Paypal 捐赠我们 ($5)</strong></a></li>
+        <li><a href="http://url.cn/L1A7fT" target="_blank"><strong>官方QQ群：164653002</strong></a></li>
+        {% for link in links %}
+        <li><a href="{{link.url}}" target="_blank">{{link.name}}</a></li>
+        {% endfor %}
+        </ul>
+	</div>
+        
+      <div class="footer">
+        <p>&copy; ShadowSocks.NET 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48072444-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

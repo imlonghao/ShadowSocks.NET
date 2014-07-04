@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="imlonghao">
+
+    <title>获取帐号 | ShadowSocks公益组织 | ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号</title>
+    <meta name="description" content="ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号" />
+    <meta name="keywords" content="ShadowSocks,ShadowSocks公益,ShadowSocks公益组织,ShadowSocks帐号,ShadowSocks教程" />
+
+    <link href="static/bootstrap.css" rel="stylesheet">
+    <link href="static/jumbotron-narrow.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+      <script src="static/html5shiv.min.js"></script>
+      <script src="static/respond.min.js"></script>
+    <![endif]-->
+  <script type="text/javascript">
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/">首页</a></li>
+          <li class="active"><a href="get">获取</a></li>
+          <li><a href="share">分享</a></li>
+          <li><a href="link">链接</a></li>
+          <li><a href="https://blog.shadowsocks.net/">博客</a></li>
+        </ul>
+        <h3 class="text-muted">ShadowSocks公益组织</h3>
+      </div>
+
+	<div class="get">
+    	<h3>感谢那些无私奉献ShadowSocks帐号的人！</h3>
+        <blockquote>
+        <p>由于可能会出现网络故障、帐号异常等等原因，不保证每个帐号都能够正常使用，使用前请参考在线率监控进行判断。</p>
+        <p>如有疑问，请联系：<a href="mailto:admin@shadowsocks.net">admin@shadowsocks.net</a></p>
+	<p class="text-warning">禁止用作SPAM、对外攻击、扫描等用途！</p>
+	<p><strong>未经允许，禁止转载！</strong><p>
+        </blockquote>
+        <table class="table table-hover">
+  		<tbody>
+		<tr>
+        <td><strong>ID</strong></td>
+		<td><strong>分享者</strong></td>
+		<td><strong>地区</strong></td>
+		<td><strong>可用率</strong></td>
+		<td><strong>获取帐号</strong></td>
+		</tr>
+		{% for account in accounts %}
+        <tr class="{% if account.is_on == 1 %}success{% else %}danger{% endif %}">
+		<td>{{account.id}}</td>
+		<td>{{account.name}}</td>
+		<td><img alt="{{account.country}}" src="media/flags/{{account.country}}.png" width="30" height="30" /></td>
+		<td><img src="https://www.statuscake.com/App/button/index.php?Track={{account.api}}&Days=1&Design=4" /></td>
+		{% if account.spdy == 1 %}
+		<td><a href="mailto:{{account.api}}@shadowsocks.net">邮件</a> ( <abbr title="详见https://www.v2ex.com/t/108398">SPDY</abbr> )</td>
+		{% else %}
+		<td><a href="#" onclick="window.open('media/{{account.qr}}','二维码','width=400,height=400')">二维码</a> / <a href="mailto:{{account.api}}@shadowsocks.net">邮件</a></td>
+		{% endif %}
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+    </div>
+    
+    <div class="footer">
+      <p>&copy; ShadowSocks.NET 2014</p>
+    </div>
+
+    </div> <!-- /container -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48072444-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

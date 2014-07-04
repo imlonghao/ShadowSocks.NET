@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="imlonghao">
+
+    <title>分享帐号 | ShadowSocks公益组织 | ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号</title>
+    <meta name="description" content="ShadowSocks公益组织是一个由民间团体发起的，旨在分享ShadowSocks帐号" />
+    <meta name="keywords" content="ShadowSocks,ShadowSocks公益,ShadowSocks公益组织,ShadowSocks帐号,ShadowSocks教程" />
+
+    <link href="static/bootstrap.css" rel="stylesheet">
+    <link href="static/jumbotron-narrow.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+      <script src="static/html5shiv.min.js"></script>
+      <script src="static/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/">首页</a></li>
+          <li><a href="get">获取</a></li>
+          <li class="active"><a href="share">分享</a></li>
+          <li><a href="link">链接</a></li>
+          <li><a href="https://blog.shadowsocks.net/">博客</a></li>
+        </ul>
+        <h3 class="text-muted">ShadowSocks公益组织</h3>
+      </div>
+
+	<div class="share">
+    	<h3>完成下面表单，分享您的帐号！</h3>
+        <blockquote>
+        <p>简单输入您的服务器IP、端口、密码、加密方式，以及其他一些相关信息即可完成分享！</p>
+	<p>推荐阅读：<a href="https://blog.shadowsocks.net/course/53.html" target="_blank">shadowsocks 公共代理的必要设置</a></p>
+        <small>由于某些特殊关系，帐号的审核时间可能会有点长，审核完成后我们会以Email的方式通知您！</small>
+        </blockquote>
+<form enctype="multipart/form-data" class="form-horizontal" role="form" action="share" method="POST">
+  <div class="form-group">
+    <label for="ip" class="col-sm-2 control-label">服务器IP</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="ip" name="ip" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="port" class="col-sm-2 control-label">服务器端口</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="port" name="port" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password" class="col-sm-2 control-label">密码</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="password" name="password" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="encryption" class="col-sm-2 control-label">加密方式</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="encryption" name="encryption" required>
+  <option>TABLE</option>
+  <option>AES-256-CFB</option>
+  <option>AES-192-CFB</option>
+  <option>AES-128-CFB</option>
+  <option>BF-CFB</option>
+  <option>CAMELLIA-256-CFB</option>
+  <option>CAMELLIA-192-CFB</option>
+  <option>CAMELLIA-128-CFB</option>
+  <option>CAST5-CFB</option>
+  <option>DES-CFB</option>
+  <option>IDEA-CFB</option>
+  <option>RC2-CFB</option>
+  <option>RC4</option>
+  <option>SEED-CFB</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="country" class="col-sm-2 control-label">国家</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="country" name="country" required>
+    </div>
+  </div>  <div class="form-group">
+    <label for="etime" class="col-sm-2 control-label">失效时间</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="etime" name="etime" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="port" class="col-sm-2 control-label">联系Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="port" class="col-sm-2 control-label">您的昵称</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="spdy" class="col-sm-2 control-label">SPDY</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="spdy" name="spdy" placeholder="如果是，请输入1；如果不是，请忽略！">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="code" class="col-sm-2 control-label">验证码</label>
+    <div class="col-sm-10">
+	  <img src="code">
+      <input type="text" class="form-control" id="code" name="code" required>
+    </div>
+  </div>
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">分享</button>
+    </div>
+  </div>
+</form>
+    </div>
+    
+    <div class="footer">
+    	<p>&copy; ShadowSocks.NET 2014</p>
+    </div>
+
+    </div> <!-- /container -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48072444-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<uwsgi>
+    <socket>127.0.0.1:10000</socket>
+    <master>true</master>
+    <uid>994</uid>
+    <chdir>/var/www/shadowsocks.net</chdir>
+    <module>wsgi</module>
+    <processes>2</processes>
+    <daemonize>/var/log/uwsgi/shadowsocks.log</daemonize>
+</uwsgi>
