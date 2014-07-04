@@ -17,11 +17,6 @@
       <script src="static/html5shiv.min.js"></script>
       <script src="static/respond.min.js"></script>
     <![endif]-->
-  <script type="text/javascript">
-function MM_openBrWindow(theURL,winName,features) { //v2.0
-  window.open(theURL,winName,features);
-}
-    </script>
 </head>
 
 <body>
@@ -62,9 +57,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 		<td><img alt="{{account.country}}" src="media/flags/{{account.country}}.png" width="30" height="30" /></td>
 		<td><img src="https://www.statuscake.com/App/button/index.php?Track={{account.api}}&Days=1&Design=4" /></td>
 		{% if account.spdy == 1 %}
-		<td><a href="mailto:{{account.api}}@shadowsocks.net">邮件</a> ( <abbr title="详见https://www.v2ex.com/t/108398">SPDY</abbr> )</td>
+		<td><a href="#" onclick="window.open('email/{{account.id}}','获取帐号','width=300,height=290')">邮件</a> ( <abbr title="详见https://www.v2ex.com/t/108398">SPDY</abbr> )</td>
 		{% else %}
-		<td><a href="#" onclick="window.open('media/{{account.qr}}','二维码','width=400,height=400')">二维码</a> / <a href="mailto:{{account.api}}@shadowsocks.net">邮件</a></td>
+		<td><a href="#" onclick="window.open('media/{{account.qr}}','二维码','width=400,height=400')">二维码</a> / <a href="#" onclick="window.open('email/{{account.id}}','获取帐号','width=300,height=290')">邮件</a></td>
 		{% endif %}
 		</tr>
 		{% endfor %}

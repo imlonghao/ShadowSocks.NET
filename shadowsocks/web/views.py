@@ -5,6 +5,7 @@ from django.core.context_processors import csrf
 from DjangoCaptcha import Captcha
 from shadowsocks.web.models import Account
 from shadowsocks.web.models import Link
+from shadowsocks.web.mail import accountmail
 
 def index(req):
     return render_to_response('index.html',)
@@ -51,3 +52,20 @@ def api(req):
         dist['online'] = account.is_on
         list.append(dist)
     return HttpResponse(json.dumps(list))
+
+def email(req,ids):
+    if req.method == 'POST':
+        ca = Captcha(req)
+        if ca.check(req.POST['code']):
+            try:
+                account = Account.objects.get(id=ids,status=1)
+                accountmail(req.POST['mailto'],account.id,account.ip,account.port,account.password,account.encryption,account.name)
+                return HttpResponse(u'success')
+            except:
+                return HttpResponse(u'ID error')
+        else:
+            return HttpResponse(u'code error')
+    else:
+        c = {}
+        c.update(csrf(req))
+        return render_to_response('email.html', c)
