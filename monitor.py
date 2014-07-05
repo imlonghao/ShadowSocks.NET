@@ -7,7 +7,7 @@ from shadowsocks.web.mail import monitordown
 
 def IsOpen(ip,port):
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    s.settimeout(25)
+    s.settimeout(50)
     try:
         s.connect((ip,int(port)))
         return 1
