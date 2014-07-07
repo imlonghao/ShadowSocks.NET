@@ -39,10 +39,10 @@ while True:
         sql = "update web_Account set is_on = %d where id = %d" % (is_on,id)
         cu.execute(sql)
         cx.commit()
-        if on != is_on and is_on == 1:
-            monitorup(mailto,ip)
-        elif on != is_on and is_on == 0:
-            monitordown(mailto,ip)
+        #if on != is_on and is_on == 1:
+        #    monitorup(mailto,ip)
+        #elif on != is_on and is_on == 0:
+        #    monitordown(mailto,ip)
     cu.close()
     cx.close()
     time.sleep(60)
